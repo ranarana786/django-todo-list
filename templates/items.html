@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if items_list %}
+<ul>
+{% for item in items_list %}
+<div class="border border-success" style="margin-bottom: 1rem;">
+<li>{{ item.title }}</li>
+<li>{{ item.description }}</li>
+</div>
+{% endfor %}
+{% else %}
+<h4> There is no items in the list </h4>
+{% endif %}
+</ul>
+<a href='{% url "items_form" %}'><button type="button" class="btn btn-primary">Add Your TodoItems</button></a>
+{% endblock %}
